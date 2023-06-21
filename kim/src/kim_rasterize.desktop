@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin,image/*;
+MimeType=image/png;image/jpeg;image/svg+xml;
+Actions=Rasterize;
+Encoding=UTF-8
+#X-KDE-Priority=TopLevel
+X-KDE-Submenu=Image - Rasterize
+X-KDE-Submenu-Icon=application-x-rpm
+
+[Desktop Action Rasterize]
+Name=Rasterize
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/rasterize.sh %f;
+MimeType=image/png;image/jpeg;image/svg+xml;
