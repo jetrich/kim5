@@ -19,7 +19,7 @@
 [Desktop Entry]
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin,image/*
-Actions=Rename;SortByDate;SendByMail;_SEPARATOR_;PeleMele;Slideshow;Galery;_SEPARATOR_;Watermark;Border;_SEPARATOR_;Animation;Multiburst;Adjoin;_SEPARATOR_;License;Apropos;
+Actions=Rename;SortByDate;SendByMail;_SEPARATOR_;PeleMele;Slideshow;Gallery;_SEPARATOR_;Watermark;Border;_SEPARATOR_;Animation;Multiburst;Adjoin;_SEPARATOR_;License;Apropos;
 Encoding=UTF-8
 X-KDE-Submenu=Kim - Treatment and publication
 X-KDE-Submenu[fr]=Kim - Traitement et publication
@@ -34,13 +34,13 @@ Name[zh_TW]=建立 Flash 投影秀
 Icon=applications-development-web
 Exec=kim_slideshow %U
 
-[Desktop Action Galery]
+[Desktop Action Gallery]
 Name=Create a html gallery
 Name[fr]=Créer un album en html
 Name[nl]=HTML-galerij samenstellen
 Name[zh_TW]=建立 HTML 藝廊
 Icon=applications-development-web
-Exec=kim_galery %U
+Exec=kim_gallery %U
 
 [Desktop Action PeleMele]
 Name=Create a photo montage
