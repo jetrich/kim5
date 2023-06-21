@@ -45,28 +45,51 @@ if [[ $? != 0 ]]; then
     exit 1
 fi
 
-cp -f src/kim_*.desktop $kdeinstdir/share/kservices5/ServiceMenus/
-cp -f src/bin/kim_* $kdeinstdir/bin/
-chmod a+rx $kdeinstdir/bin/kim_*
-chmod a+r $kdeinstdir/share/kservices5/ServiceMenus/kim_*.desktop
+# Get the absolute path of the script's directory
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Look for variables.sh in the script's directory
+if [ -f "$script_dir/variables.sh" ]; then
+    variables_file="$script_dir/variables.sh"
+elif [ -f "$script_dir/variables.example" ]; then
+    variables_file="$script_dir/variables.example"
+else
+    echo "Error: variables.sh or variables.example not found in the script's directory."
+    exit 1
+fi
+
+# Create the destination directory if it doesn't exist
+destination_dir="$HOME/.kim"
+mkdir -p "$destination_dir"
+
+# Copy the variables file to $HOME/.kim/variables.sh
+cp "$variables_file" "$destination_dir/variables.sh"
+
+echo "Variables file copied to: $destination_dir/variables.sh"
+
+
+sudo cp -f src/kim_*.desktop $kdeinstdir/share/kservices5/ServiceMenus/
+sudo cp -f src/bin/kim_* $kdeinstdir/bin/
+sudo chmod a+rx $kdeinstdir/bin/kim_*
+sudo chmod a+r $kdeinstdir/share/kservices5/ServiceMenus/kim_*.desktop
 #mv -f $kdeinstdir/share/kde4/services/ServiceMenus/imageconverter.desktop $kdeinstdir/share/kde4/services/ServiceMenus/imageconverter.desktop~ 2>/dev/null
 
-mkdir -p $kdeinstdir/share/kim
-cp COPYING $kdeinstdir/share/kim/kim_license.txt
-cp ABOUT $kdeinstdir/share/kim/kim_about.txt
-cp src/kim_translation $kdeinstdir/share/kim
+sudo mkdir -p $kdeinstdir/share/kim
+sudo cp COPYING $kdeinstdir/share/kim/kim_license.txt
+sudo cp ABOUT $kdeinstdir/share/kim/kim_about.txt
+sudo cp src/kim_translation $kdeinstdir/share/kim
 
-mkdir -p $kdeinstdir/share/kim/slideshow/
-cp src/slideshow/* $kdeinstdir/share/kim/slideshow/
+sudo mkdir -p $kdeinstdir/share/kim/slideshow/
+sudo cp src/slideshow/* $kdeinstdir/share/kim/slideshow/
 
-mkdir -p $kdeinstdir/share/kim/gallery
-cp src/gallery/* $kdeinstdir/share/kim/gallery
-chmod a+rx -R $kdeinstdir/share/kim
+sudo mkdir -p $kdeinstdir/share/kim/gallery
+sudo cp src/gallery/* $kdeinstdir/share/kim/gallery
+sudo chmod a+rx -R $kdeinstdir/share/kim
 
 # install translation mo files
 for i in src/po/*.po; do
 	MOFILE=/usr/share/locale/`basename -s .po $i`/LC_MESSAGES/kim5.mo
-	msgfmt -o ${MOFILE} $i
+	sudo msgfmt -o ${MOFILE} $i
 done
 
 echo "Kim has been installed. Good bye!"

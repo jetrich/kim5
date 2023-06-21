@@ -1,11 +1,16 @@
 HOW TO INSTALL
 =======================
 
-To install KIM on your computer, run 
+To install KIM on your computer:
+
+Copy the variables.example file to variables.sh
+Then update the information inside the script to set the variables as desired. If not done prior to running the installer the file will need to be modified at $HOME/.kim/variables.sh
+
+Then run 
 
 ./install.sh
 
-as root and select the option for installation.
+as your user and select the option for installation.
 
 
 HOW TO UNINSTALL
