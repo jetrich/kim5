@@ -1,0 +1,26 @@
+#!/bin/bash
+# $HOME/.kim/variables.sh
+
+# Set the default to not process all files
+export process_all=false
+export force_process=false
+
+# Set the pixel widths for rasterization
+pixel_widths=(32 45 100 250 300 512 600 1200 1600 2000 2500 3000)
+export pixel_widths
+
+# Set the path to the watermark image
+export watermark_file=""
+export watermark_width=3000
+export watermark_height=546
+
+# Set the vectorizer.ai API credentials
+vectorizer_username=""
+export vectorizer_username
+vectorizer_password=""
+export vectorizer_password
+
+
+# Maximum number of parallel jobs
+max_parallel_jobs=5
+export max_parallel_jobs
