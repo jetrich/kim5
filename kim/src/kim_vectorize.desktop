@@ -1,0 +1,29 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin,image/*
+#ServiceTypes=image/png;image/jpg;image/jpeg;
+MimeType=image/png;image/jpg;image/jpeg;
+Actions=ConvertToVectorVectorizerAPI;ConvertToVectorLocalCairoSVG;ConvertToVectorLocalPotrace;
+Encoding=UTF-8
+#X-KDE-Priority=TopLevel
+X-KDE-Submenu=Image - Vectorize
+X-KDE-Submenu-Icon=application-x-rpm
+
+[Desktop Action ConvertToVectorVectorizerAPI]
+Name=Create Vector - Vectorizer API
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/vectorize_api.sh %f;
+MimeType=image/png;image/jpeg;image/jpg;
+
+[Desktop Action ConvertToVectorLocalCairoSVG]
+Name=Create Vector - Local CairoSVG
+Icon=utilities-terminal
+# Exec=/opt/woltje/scripts/vectorize_local.sh %f;
+Exec=/opt/woltje/scripts/vectorize_local.py %f;
+MimeType=image/png;image/jpeg;image/jpg;
+
+[Desktop Action ConvertToVectorLocalPotrace]
+Name=Create Vector - Local Potrace
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/vectorize_local_potrace.sh %f;
+MimeType=image/png;image/jpeg;image/jpg;
