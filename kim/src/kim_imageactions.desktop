@@ -1,0 +1,34 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin,image/*;
+MimeType=image/*;
+Actions=DuplicateSevenTimes;
+Encoding=UTF-8
+#X-KDE-Priority=TopLevel
+X-KDE-Submenu=Image Actions
+X-KDE-Submenu-Icon=application-x-rpm
+Icon=image-x-applix-graphics
+
+[Desktop Action DuplicateSevenTimes]
+Type=Service
+Name=Duplicate 7 Times
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/duplicate_7_times.sh %f
+
+[Desktop Action OrganizeImages]
+Type=Service
+Name=Organize Images
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/org_images.sh %f
+
+[Desktop Action SortByRatios]
+Type=Service
+Name=Sort By Ratios
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/sort_ratios.sh %f
+
+[Desktop Action RemovePage001]
+Type=Service
+Name=Remove page001 from filenames
+Icon=utilities-terminal
+Exec=bash -c '/opt/woltje/scripts/file_name_cleanup/remove_page001.sh "%F"'
