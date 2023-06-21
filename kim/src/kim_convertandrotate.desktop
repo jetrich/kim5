@@ -19,7 +19,7 @@
 [Desktop Entry]
 Type=Service
 ServiceTypes=KonqPopupMenu/Plugin,image/*
-Actions=JPEG;PNG;GIF;TIF;PDF;ConvCustom;_SEPARATOR_;GrayScale;Sepia;_SEPARATOR_;AutoRot;Rot90;Rot180;Rot270;RotCustom;_SEPARATOR_;Flip;Flop
+Actions=JPEG;PNG;GIF;TIF;PDF;WEBP;ConvCustom;_SEPARATOR_;GrayScale;Sepia;_SEPARATOR_;AutoRot;Rot90;Rot180;Rot270;RotCustom;_SEPARATOR_;Flip;Flop
 Encoding=UTF-8
 X-KDE-Submenu=Kim - Convert and Rotate
 X-KDE-Submenu[fr]=Kim - Convertir et tourner
@@ -57,6 +57,14 @@ Name[nl]=Converteren naar tiff
 Name[zh_TW]=轉換成 TIF
 Icon=document-save
 Exec=kim_convert tiff %U
+
+[Desktop Action WEBP]
+Name=Convert to WEBP
+Name[fr]=Convertir en WEBP
+Name[nl]=Converteren naar webp
+Name[zh_TW]=轉換成 WEBP
+Icon=document-save
+Exec=kim_convert webp %U
 
 [Desktop Action PDF]
 Name=Convert to PDF
@@ -131,7 +139,7 @@ Icon=object-rotate-right
 Exec=kim_rotate `kdialog --inputbox "Rotate x degrees:" 45` %U;
 
 [Desktop Action Flip]
-Name=Verticaly
+Name=Vertically
 Name[de]=Vertikal spiegeln
 Name[es]=Verticalmente
 Name[fr]=Verticalement
@@ -142,7 +150,7 @@ Icon=object-flip-vertical
 Exec=kim_flipflop flip %U 
 
 [Desktop Action Flop]
-Name=Horizontaly
+Name=Horizontally
 Name[de]=Horizontal spiegeln
 Name[es]=Horizontalmente
 Name[fr]=Horizontalement
