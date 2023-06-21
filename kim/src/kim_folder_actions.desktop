@@ -1,0 +1,40 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin,image/*
+MimeType=inode/directory;
+Actions=CreateFolders;OrganizeImages;SortByRatios;RemovePage001;ReplaceColon;
+Encoding=UTF-8
+X-KDE-Priority=TopLevel
+X-KDE-Submenu=Image Folder Actions
+X-KDE-Submenu-Icon=application-x-rpm
+Icon=image-x-applix-graphics
+
+[Desktop Action CreateFolders]
+Type=Service
+Name=Create Image Folders
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/create_image_folders.sh %f
+
+[Desktop Action OrganizeImages]
+Type=Service
+Name=Organize Images
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/org_images.sh %f
+
+[Desktop Action SortByRatios]
+Type=Service
+Name=Sort By Ratios
+Icon=utilities-terminal
+Exec=/opt/woltje/scripts/sort_ratios.sh %f
+
+[Desktop Action RemovePage001]
+Type=Service
+Name=Remove page001 from filenames
+Icon=utilities-terminal
+Exec=bash -c '/opt/woltje/scripts/file_name_cleanup/remove_page001.sh "%F"'
+
+[Desktop Action ReplaceColon]
+Type=Service
+Name=Replace colon with x
+Icon=utilities-terminal
+Exec=bash -c '/opt/woltje/scripts/file_name_cleanup/replace_colon.sh "%F"'
